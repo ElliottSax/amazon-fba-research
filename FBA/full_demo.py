@@ -280,3 +280,33 @@ NEXT STEPS:
           pipeline = FBAResearchPipeline()
           result = pipeline.research_product('B08PZHWJS5')
 """)
+
+# ============================================================================
+# 5. PROFIT CALCULATOR DEMO
+# ============================================================================
+print("\n" + "=" * 70)
+print("BONUS: FBA PROFIT CALCULATOR")
+print("=" * 70)
+
+from profit_calculator import FBAProfitCalculator, ProductDimensions, quick_profit_check
+
+# Example products to analyze
+test_products = [
+    {"name": "Wireless Earbuds", "price": 29.99, "cost": 8.00, "weight": 0.3, "category": "electronics_accessories"},
+    {"name": "Kitchen Utensil Set", "price": 24.99, "cost": 6.50, "weight": 1.2, "category": "kitchen"},
+    {"name": "Phone Case", "price": 14.99, "cost": 2.50, "weight": 0.1, "category": "cell_phone_devices"},
+]
+
+print("\nProduct Profitability Analysis:")
+print("-" * 70)
+print(f"{'Product':<25} {'Price':>8} {'Cost':>7} {'Fees':>7} {'Profit':>8} {'Margin':>8} {'Viable'}")
+print("-" * 70)
+
+for p in test_products:
+    result = quick_profit_check(p['price'], p['cost'], p['weight'], p['category'])
+    viable = "✓" if result['viable'] else "✗"
+    print(f"{p['name']:<25} ${p['price']:>6.2f} ${p['cost']:>5.2f} ${result['total_fees']:>5.2f} "
+          f"${result['profit']:>6.2f} {result['margin']:>6.1f}% {viable:>6}")
+
+print("-" * 70)
+print("\n✓ = Margin ≥ 20% (viable for FBA)")
