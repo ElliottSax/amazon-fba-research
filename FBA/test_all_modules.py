@@ -16,7 +16,7 @@ print("=" * 70)
 results = []
 
 # Test 1: Market Analysis
-print("\n[1/9] Market Analysis Module")
+print("\n[1/10] Market Analysis Module")
 print("-" * 70)
 try:
     from market_analysis import MarketAnalyzer, create_sample_competitors
@@ -44,7 +44,7 @@ except Exception as e:
     results.append(("Market Analysis", False))
 
 # Test 2: Keyword Research
-print("\n[2/9] Keyword Research Module")
+print("\n[2/10] Keyword Research Module")
 print("-" * 70)
 try:
     from keyword_research import KeywordResearcher
@@ -63,7 +63,7 @@ except Exception as e:
     results.append(("Keyword Research", False))
 
 # Test 3: PPC Analyzer
-print("\n[3/9] PPC Analyzer Module")
+print("\n[3/10] PPC Analyzer Module")
 print("-" * 70)
 try:
     from ppc_analyzer import PPCAnalyzer
@@ -90,7 +90,7 @@ except Exception as e:
     results.append(("PPC Analyzer", False))
 
 # Test 4: Review Analyzer
-print("\n[4/9] Review Analyzer Module")
+print("\n[4/10] Review Analyzer Module")
 print("-" * 70)
 try:
     from review_analyzer import ReviewAnalyzer, create_sample_reviews
@@ -110,7 +110,7 @@ except Exception as e:
     results.append(("Review Analyzer", False))
 
 # Test 5: Competitor Monitor
-print("\n[5/9] Competitor Monitor Module")
+print("\n[5/10] Competitor Monitor Module")
 print("-" * 70)
 try:
     from competitor_monitor import CompetitorMonitor, create_sample_data
@@ -136,7 +136,7 @@ except Exception as e:
     results.append(("Competitor Monitor", False))
 
 # Test 6: Launch Strategy
-print("\n[6/9] Launch Strategy Module")
+print("\n[6/10] Launch Strategy Module")
 print("-" * 70)
 try:
     from launch_strategy import LaunchStrategyGenerator, create_sample_input
@@ -158,7 +158,7 @@ except Exception as e:
     results.append(("Launch Strategy", False))
 
 # Test 7: Listing Optimizer
-print("\n[7/9] Listing Optimizer Module")
+print("\n[7/10] Listing Optimizer Module")
 print("-" * 70)
 try:
     from listing_optimizer import ListingOptimizer, create_sample_listing
@@ -179,7 +179,7 @@ except Exception as e:
     results.append(("Listing Optimizer", False))
 
 # Test 8: Sales Analytics
-print("\n[8/9] Sales Analytics Module")
+print("\n[8/10] Sales Analytics Module")
 print("-" * 70)
 try:
     from sales_analytics import SalesAnalyzer, create_sample_sales_data
@@ -202,7 +202,7 @@ except Exception as e:
     results.append(("Sales Analytics", False))
 
 # Test 9: Supplier Sourcing
-print("\n[9/9] Supplier Sourcing Module")
+print("\n[9/10] Supplier Sourcing Module")
 print("-" * 70)
 try:
     from supplier_sourcing import SupplierAnalyzer, create_sample_suppliers, ShippingMethod
@@ -227,6 +227,28 @@ try:
 except Exception as e:
     print(f"  ✗ FAILED: {e}")
     results.append(("Supplier Sourcing", False))
+
+# Test 10: Winning Product Finder
+print("\n[10/10] Winning Product Finder Module")
+print("-" * 70)
+try:
+    from winning_product import WinningProductFinder, create_sample_market_data, create_sample_costs
+
+    finder = WinningProductFinder()
+    market = create_sample_market_data()
+    costs = create_sample_costs()
+
+    score = finder.analyze_product("Test Product", market, costs)
+
+    print(f"  ✓ Overall score: {score.overall_score}/100")
+    print(f"  ✓ Opportunity: {score.opportunity_level}")
+    print(f"  ✓ Criteria scores: {len(score.criteria_scores)} criteria")
+    print(f"  ✓ Pros: {len(score.pros)}, Cons: {len(score.cons)}")
+    print(f"  ✓ Monthly profit: ${score.estimated_monthly_profit:,.2f}")
+    results.append(("Winning Product Finder", True))
+except Exception as e:
+    print(f"  ✗ FAILED: {e}")
+    results.append(("Winning Product Finder", False))
 
 # Summary
 print("\n" + "=" * 70)
