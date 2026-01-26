@@ -1,4 +1,32 @@
-# Amazon FBA Product Research Pipeline
+# Amazon KDP/FBA Publishing Ecosystem
+
+Complete toolkit for Amazon product research and KDP book publishing.
+
+## 🎯 Three Integrated Systems
+
+| Project | Purpose | Status |
+|---------|---------|--------|
+| **[FBA Research](FBA/)** | Product research & inventory | ✅ Production |
+| **[Coloring Books](coloring-books/)** | Adult coloring book generator | ✅ v2.0 |
+| **[Puzzle Books](kdp-quality-pipeline/)** | Puzzle book generator & validator | ✅ Production |
+
+📖 **[Complete Ecosystem Guide](ECOSYSTEM_GUIDE.md)** - Integration workflows and business models
+
+## 🚀 Quick Start with Master Control
+
+```bash
+# Interactive menu for all systems
+python3 master_control.py
+
+# Or launch directly into a specific system
+python3 master_control.py --system coloring
+python3 master_control.py --system puzzle
+python3 master_control.py --system fba
+```
+
+---
+
+# FBA Product Research Pipeline
 
 A compliant toolkit for Amazon FBA product research using official APIs.
 
@@ -152,6 +180,32 @@ FBA/
 ├── SETUP.md                    # Configuration guide
 └── PRODUCT_RESEARCH_TOOLS.md   # Tool reference
 ```
+
+## Related Projects
+
+### KDP Book Publishing
+
+- **[Adult Coloring Books](coloring-books/)** - Generate professional coloring books
+  - 7 themes (Mandalas, Animals, Nature, etc.)
+  - Enhanced line art processing
+  - 100% free generation
+  - Print-ready PDFs
+  - Quick start: `cd coloring-books && python complete_book_workflow.py --theme mandalas --pages 30`
+
+- **[Puzzle Books](kdp-quality-pipeline/)** - Generate quality-validated puzzle books
+  - 8 puzzle types (Sudoku, Word Search, Maze, etc.)
+  - Automated quality validation
+  - 24/7 daemon mode
+  - KDP-compliant covers
+  - Quick start: `cd kdp-quality-pipeline && python run_daemon.py --once`
+
+### Complete Integration
+
+See **[ECOSYSTEM_GUIDE.md](ECOSYSTEM_GUIDE.md)** for:
+- How to integrate research with publishing
+- Complete business workflows
+- Scaling strategies
+- Best practices
 
 ## License
 
